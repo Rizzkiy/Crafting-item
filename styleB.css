@@ -1,117 +1,85 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #1A1A1A;
-  color: #fff;
-}
-
-header {
-  background-color: #1A1A1A;
-  padding: 20px;
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#search-input {
-  padding: 10px;
-  border: none;
-  border-radius: 15px;
-  width: 300px;
-  background-color: #000000;
-  color: #fff;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.9), 0 0 40px rgba(0, 255, 0, 0.9), 0 0 50px rgba(0, 0, 255, 0.9);
-}
-
-#search-button {
-  padding: 10px;
-  border: none;
-  border-radius: 15px;
-  background-color: #555;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.9), 0 0 40px rgba(0, 255, 0, 0.9), 0 0 50px rgba(0, 0, 255, 0.9);
-}
-
-.data {
-  background-color: #000000;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.9), 0 0 40px rgba(0, 255, 0, 0.9), 0 0 50px rgba(0, 0, 255, 0.9);
-  transition: all 0.3s ease-in-out;
-}
-
-.data:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 40px rgba(255, 0, 0, 0.9), 0 0 50px rgba(0, 255, 0, 0.9), 0 0 60px rgba(0, 0, 255, 0.9);
-}
-
-@keyframes rgb-animation {
-  0% {
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.9), 0 0 40px rgba(0, 255, 0, 0.9), 0 0 50px rgba(0, 0, 255, 0.9);
-  }
-  33% {
-    box-shadow: 0 0 30px rgba(0, 255, 0, 0.9), 0 0 40px rgba(0, 0, 255, 0.9), 0 0 50px rgba(255, 0, 0, 0.9);
-  }
-  66% {
-    box-shadow: 0 0 30px rgba(0, 0, 255, 0.9), 0 0 40px rgba(255, 0, 0, 0.9), 0 0 50px rgba(0, 255, 0, 0.9);
-  }
-  100% {
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.9), 0 0 40px rgba(0, 255, 0, 0.9), 0 0 50px rgba(0, 0, 255, 0.9);
-  }
-}
-
-.data-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.data img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-
-.hidden {
-  display: none;
-}
-
-#search-input, #search-button, .data {
-  animation: rgb-animation 3s infinite;
-}
-
-@keyframes rgb-animation {
-  0% {
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 0, 255, 0.5);
-  }
-  33% {
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 0, 255, 0.5), 0 0 30px rgba(255, 0, 0, 0.5);
-  }
-  66% {
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5), 0 0 20px rgba(255, 0, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.5);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 0, 255, 0.5);
-  }
-}
-
-.tombol-kiri {
-  text-align: left;
-}
-
-img {
-    display: block;
-    margin: auto;
-    width: 60%;
-    height: auto;
-}
-
-h2 {
-    text-align: center;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Crafting</title>
+    <link rel="stylesheet" href="styleB.css">
+</head>
+<body>
+    <header>
+        <img src="Logo_game_developer_ikan_asin_production.png" alt="Ikan Asin icon" />
+        <div style="text-align: center;">
+            <a href="https://www.ikanasinproduction.com/" style="color: #A5522F;">www.ikanasinproduction.com</a>
+        </div>
+        <h2>List Resep Crafting di Citampi Stories</h2>
+        <nav>
+            <input type="search" id="search-input" placeholder="Cari Gambar...">
+            <button id="search-button">Cari</button>
+        </nav>
+    </header>
+    <main>
+        <div class="data-container">
+            <div class="data" id="data-A">
+                <img src="part1.jpg" alt="part1">
+                <h2>Meja Produksi</h2>
+                <p>
+                    Meta Produksi Level 1
+                </p>
+            </div>
+            <div class="data" id="data-B">
+                <img src="part2.jpg" alt="part2">
+                <h2>Meja Produksi</h2>
+                <p>
+                    Meja Produksi Level 1 ke 2
+                </p>
+            </div>
+            <div class="data" id="data-C">
+                <img src="part3.jpg" alt="part3">
+                <h2>Meja Produksi</h2>
+                <p>
+                    Meja Produksi Level 1 ke 3
+                </p>
+            </div>
+            <div class="data" id="data-D">
+                <img src="part4.jpg" alt="part4">
+                <h2>Meja Produksi</h2>
+                <p>
+                    Meja Produksi Level 2
+                </p>
+            </div>
+            <div class="data" id="data-D">
+                <img src="part5.jpg" alt="part5">
+                <h2>Tungku Pelebur</h2>
+                <p>
+                    Tungku Pelebur Level 1
+                </p>
+            </div>
+            <div class="data" id="data-D">
+                <img src="part6.jpg" alt="part6">
+                <h2>Tungku Pelebur</h2>
+                <p>
+                    Tungku Pelebur Level 1 ke 2
+                </p>
+            </div>
+            <div class="data" id="data-D">
+                <img src="part7.jpg" alt="part7">
+                <h2>Media Pembenihan</h2>
+                <p>
+                    Media Pembenihan 1
+                </p>
+            </div>
+            <div class="data" id="data-D">
+                <img src="part8.jpg" alt="part8">
+                <h2>Lain Lain</h2>
+                <p>
+                    List Barang Barang yang bisa berguna
+                </p>
+            </div>
+        </main>
+        <div class="tombol-kiri">
+            <a href="https://rizzkiy.github.io/List-item-citampi/" style="color : #A5522F;">Back</a>
+        </div>
+        <script src="scriptB.js"></script>
+    </body>
+</html>
