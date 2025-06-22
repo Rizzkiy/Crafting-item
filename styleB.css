@@ -104,3 +104,14 @@ nav {
 .tombol-kiri {
   text-align: left;
 }
+
+img {
+    display: block;
+    margin: auto;
+    width: 60%;
+    height: auto;
+}
+
+h2 {
+    text-align: center;
+}
