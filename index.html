@@ -1,85 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Crafting</title>
-    <link rel="stylesheet" href="styleB.css">
+    <title>Galeri Gambar Responsif</title>
+    <style>
+        /* CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-grow: 1;
+            max-width: 600px;
+        }
+        
+        #search-input {
+            padding: 12px 20px;
+            width: 100%;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px 0 0 30px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        #search-input:focus {
+            border-color: #e74c3c;
+        }
+        
+        #search-button {
+            padding: 12px 25px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        #search-button:hover {
+            background-color: #e74c3c;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .image-container {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* Default 1:1 ratio, akan di-override oleh JS */
+        }
+        
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #f5f5f5;
+        }
+        
+        .gallery-item p {
+            padding: 15px;
+            margin: 0;
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .search-container {
+                width: 100%;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <img src="https://raw.githubusercontent.com/Rizzkiy/List-item-citampi/refs/heads/main/Logo_game_developer_ikan_asin_production.png" alt="Ikan Asin icon" />
-        <div style="text-align: center;">
-            <a href="https://www.ikanasinproduction.com/" style="color: #A5522F;">www.ikanasinproduction.com</a>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://rizzkiy.github.io/List-item-citampi/Logo_game_developer_ikan_asin_production.png" alt="Logo">
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Cari gambar...">
+                <button id="search-button">Cari</button>
+            </div>
         </div>
-        <h2>List Resep Crafting di Citampi Stories</h2>
-        <nav>
-            <input type="search" id="search-input" placeholder="Cari Gambar...">
-            <button id="search-button">Cari</button>
-        </nav>
-    </header>
-    <main>
-        <div class="data-container">
-            <div class="data" id="data-A">
-                <img src="part1.jpg" alt="part1">
-                <h2>Meja Produksi</h2>
-                <p>
-                    Meta Produksi Level 1
-                </p>
-            </div>
-            <div class="data" id="data-B">
-                <img src="part2.jpg" alt="part2">
-                <h2>Meja Produksi</h2>
-                <p>
-                    Meja Produksi Level 1 ke 2
-                </p>
-            </div>
-            <div class="data" id="data-C">
-                <img src="part3.jpg" alt="part3">
-                <h2>Meja Produksi</h2>
-                <p>
-                    Meja Produksi Level 1 ke 3
-                </p>
-            </div>
-            <div class="data" id="data-D">
-                <img src="part4.jpg" alt="part4">
-                <h2>Meja Produksi</h2>
-                <p>
-                    Meja Produksi Level 2
-                </p>
-            </div>
-            <div class="data" id="data-D">
-                <img src="part5.jpg" alt="part5">
-                <h2>Tungku Pelebur</h2>
-                <p>
-                    Tungku Pelebur Level 1
-                </p>
-            </div>
-            <div class="data" id="data-D">
-                <img src="part6.jpg" alt="part6">
-                <h2>Tungku Pelebur</h2>
-                <p>
-                    Tungku Pelebur Level 1 ke 2
-                </p>
-            </div>
-            <div class="data" id="data-D">
-                <img src="part7.jpg" alt="part7">
-                <h2>Media Pembenihan</h2>
-                <p>
-                    Media Pembenihan 1
-                </p>
-            </div>
-            <div class="data" id="data-D">
-                <img src="part8.jpg" alt="part8">
-                <h2>Lain Lain</h2>
-                <p>
-                    List Barang Barang yang bisa berguna
-                </p>
-            </div>
-        </main>
-        <div class="tombol-kiri">
-            <a href="https://rizzkiy.github.io/List-item-citampi/" style="color : #A5522F;">Back</a>
+        
+        <div class="gallery" id="image-gallery">
+            <!-- Gambar-gambar akan dimuat di sini melalui JavaScript -->
         </div>
-        <script src="scriptB.js"></script>
-    </body>
+    </div>
+
+    <script>
+        // JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Data gambar dengan berbagai rasio aspek
+            const images = [
+                { id: 1, src: 'https://raw.githubusercontent.com/Rizzkiy/Crafting-item/refs/heads/main/part1.jpg', title: 'Meja Produksi Level 1 Ke-1' },
+                { id: 2, src: 'https://raw.githubusercontent.com/Rizzkiy/Crafting-item/refs/heads/main/part2.jpg', title: 'Meja Produksi Level 1 Ke-2' },
+                { id: 3, src: 'https://raw.githubusercontent.com/Rizzkiy/Crafting-item/refs/heads/main/part3.jpg', title: 'Meja Produksi Level 1 Ke-3' },
+                { id: 4, src: 'https://raw.githubusercontent.com/Rizzkiy/Crafting-item/refs/heads/main/part4.jpg', title: 'Meja Produksi Level 2' },
+                { id: 5, src: 'https://raw.githubusercontent.com/Rizzkiy/Crafting-item/refs/heads/main/part5.jpg', title: 'Pelebur Level 1 Ke-1' },
+                { id: 6, src: 'https://raw.githubusercontent.com/Rizzkiy/Crafting-item/refs/heads/main/part6.jpg', title: 'Pelebur Level 1 ke-2' },
+                { id: 7, src: 'https://raw.githubusercontent.com/Rizzkiy/Crafting-item/refs/heads/main/part7.jpg', title: 'Media Pembenihan Level 1' },
+                { id: 8, src: 'https://raw.githubusercontent.com/Rizzkiy/Crafting-item/refs/heads/main/part8.jpg', title: 'Lain-lain' }
+            ];
+            
+            const gallery = document.getElementById('image-gallery');
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
+            
+            // Fungsi untuk memuat gambar dan mengatur rasio aspek
+            function loadImages(imagesToShow) {
+                gallery.innerHTML = '';
+                
+                if (imagesToShow.length === 0) {
+                    gallery.innerHTML = '<div class="no-results">Tidak ada gambar yang cocok dengan pencarian Anda</div>';
+                    return;
+                }
+                
+                imagesToShow.forEach(image => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    
+                    // Buat elemen gambar terlebih dahulu
+                    const imgContainer = document.createElement('div');
+                    imgContainer.className = 'image-container';
+                    
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.alt = image.title;
+                    img.loading = 'lazy';
+                    
+                    // Ketika gambar selesai dimuat, atur rasio aspek
+                    img.onload = function() {
+                        const aspectRatio = (this.naturalHeight / this.naturalWidth) * 100;
+                        imgContainer.style.paddingTop = aspectRatio + '%';
+                    };
+                    
+                    imgContainer.appendChild(img);
+                    
+                    const title = document.createElement('p');
+                    title.textContent = `${image.title} (ID: ${image.id})`;
+                    
+                    item.appendChild(imgContainer);
+                    item.appendChild(title);
+                    gallery.appendChild(item);
+                });
+            }
+            
+            // Fungsi untuk mencari gambar
+            function searchImages() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                
+                if (searchTerm === '') {
+                    loadImages(images);
+                    return;
+                }
+                
+                const filteredImages = images.filter(image => 
+                    image.title.toLowerCase().includes(searchTerm) || 
+                    image.id.toString().includes(searchTerm)
+                );
+                
+                loadImages(filteredImages);
+            }
+            
+            // Event listeners
+            searchButton.addEventListener('click', searchImages);
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    searchImages();
+                }
+            });
+            
+            // Tampilkan semua gambar saat pertama kali dimuat
+            loadImages(images);
+        });
+    </script>
+</body>
 </html>
